@@ -1,0 +1,7 @@
+* 5 November 2019 
+- Alpine based docker image based on generic image, no systemd.
+- Docker hub image: ripencc/rpki-validator-3-docker:alpine 
+
+* 4 July 2019 
+- Validator 3.1, centos/systemd based image.
+- Docker hub image: ripencc/rpki-validator-3-docker:independence-day
