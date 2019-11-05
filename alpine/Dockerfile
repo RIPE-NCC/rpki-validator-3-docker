@@ -5,5 +5,6 @@ WORKDIR /var/lib/rpki-validator-3
 RUN tar xfz /rpki-validator-3-latest-dist.tar.gz; mv */* .; 
 RUN sed -i 's/env bash/env ash/g'  rpki-validator-3.sh
 RUN sed -i 's/server.address=localhost/server.address=0.0.0.0/g' conf/application.properties
+RUN sed -i '/MEM_OPTIONS=/c\MEM_OPTIONS="-Xms$JVM_XMS -Xmx$JVM_XMX -XX:+ExitOnOutOfMemoryError -XX:+UseContainerSupport"' rpki-validator-3.sh 
 EXPOSE 8080
 CMD ["/var/lib/rpki-validator-3/rpki-validator-3.sh"]
